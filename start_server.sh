@@ -1,2 +1,2 @@
 cd /home/ec2-user
-mvn spring-boot:run
+java -jar springboot-0.0.1-SNAPSHOT.war

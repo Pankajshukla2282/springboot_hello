@@ -3,8 +3,12 @@ os: linux
 files:
   - source: springboot-0.0.1-SNAPSHOT.war
     destination: /home/ec2-user
+  - source: start_server.sh
+    destination: /home/ec2-user
+  - source: appspec.yml
+    destination: /home/ec2-user
 hooks:
   ApplicationStart:
     - location: start_server.sh
-      timeout: 300
+      timeout: 60
       runas: root
