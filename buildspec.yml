@@ -1,23 +1,24 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      java: corretto11
-    commands:
-      - echo Entered the install phase...
-      - apt-get update -y
-      - apt-get install -y maven      
-  pre_build:
-    commands:
-      - echo Nothing to do in the pre_build phase...
-  build:
-    commands:
-      - echo Build started on `date`
-      - mvn install
-  post_build:
-    commands:
-      - echo Build completed on `date`
+    install:
+        runtime-versions:
+            java: corretto11
+    pre_build:
+        commands:
+            - echo "Pre_build"
+    build:
+        commands:
+            - echo "Build"
+            - mvn clean install
+    post_build:
+        commands:
+            - echo "Post_build"
 artifacts:
+  type: zip
   files:
-    - target/messageUtil-1.0.jar
+    - target/springboot-0.0.1-SNAPSHOT.war
+    - appspec.yml
+    - start_server.sh
+  discard-paths: yes
+        

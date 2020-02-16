@@ -1,2 +1,2 @@
-# springboot_hello
-Hello world program using springboot
+# MyDemoRepo
+Demo repository for springboot apps
